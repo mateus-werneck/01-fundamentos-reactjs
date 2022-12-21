@@ -41,7 +41,7 @@ const TaskComponent = ({ task, defaultChecked, setDone, setTask }: TaskProps) =>
       <FormControlLabel
         control={
           <Checkbox
-            defaultChecked={defaultChecked ? true: false}
+            defaultChecked={defaultChecked}
             onChange={handleCheck}
             icon={<RiCheckboxBlankCircleLine size={24} />}
             checkedIcon={
