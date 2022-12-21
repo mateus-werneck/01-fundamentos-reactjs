@@ -14,8 +14,7 @@ interface TaskProps {
   setTask: (value: any) => void;
 }
 
- const TaskComponent = ({ task, setDone, setTask }: TaskProps) => {
-  console.log('Rendering', task)
+const TaskComponent = ({ task, setDone, setTask }: TaskProps) => {
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDone((value: string[]) => {
       if (event.target.checked) {
@@ -61,9 +60,8 @@ interface TaskProps {
       </button>
     </div>
   );
-}
+};
 
-const Task = React.memo(TaskComponent)
+const Task = React.memo(TaskComponent);
 
 export { Task };
-
