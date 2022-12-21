@@ -44,6 +44,7 @@ export function Tasks() {
       <Task
         key={`${task}-${index}`}
         task={task}
+        defaultChecked={done.includes(task)}
         setDone={setDone}
         setTask={setTask}
       />

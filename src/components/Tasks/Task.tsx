@@ -10,11 +10,12 @@ import styles from "./task.module.css";
 
 interface TaskProps {
   task: string;
+  defaultChecked?: boolean;
   setDone: (value: any) => void;
   setTask: (value: any) => void;
 }
 
-const TaskComponent = ({ task, setDone, setTask }: TaskProps) => {
+const TaskComponent = ({ task, defaultChecked, setDone, setTask }: TaskProps) => {
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDone((value: string[]) => {
       if (event.target.checked) {
@@ -40,6 +41,7 @@ const TaskComponent = ({ task, setDone, setTask }: TaskProps) => {
       <FormControlLabel
         control={
           <Checkbox
+            defaultChecked={defaultChecked ? true: false}
             onChange={handleCheck}
             icon={<RiCheckboxBlankCircleLine size={24} />}
             checkedIcon={
