@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import { Badge } from "../Badge/Badge";
 import styles from "./tasks.module.css";
 
 import clipboard from "../../assets/Clipboard.svg";
-import { Task } from "./Task";
 import { TaskBar } from "../TaskBar/TaskBar";
+import { Task } from "./Task";
 
 export function Tasks() {
   const [tasks, setTask] = useState<string[]>([]);
@@ -39,7 +39,7 @@ export function Tasks() {
     );
   };
 
-  const getTasks = useMemo(() => {
+  const getTasks = () => {
     return tasks.map((task, index) => (
       <Task
         key={`${task}-${index}`}
@@ -47,14 +47,14 @@ export function Tasks() {
         setDone={setDone}
         setTask={setTask}
       />
-    ))
-  }, [tasks])
+    ));
+  };
 
   const taskContent = (): JSX.Element => {
     return (
       <>
         {emptyContent()}
-        {getTasks}
+        {getTasks()}
       </>
     );
   };

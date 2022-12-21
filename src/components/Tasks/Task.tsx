@@ -1,12 +1,12 @@
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { TbTrash } from "react-icons/tb";
-import styles from "./task.module.css";
+import React from "react";
 import {
   RiCheckboxBlankCircleLine,
   RiCheckboxCircleFill,
 } from "react-icons/ri";
-import React from "react";
+import { TbTrash } from "react-icons/tb";
 import { removeElement } from "../../utils/Array";
+import styles from "./task.module.css";
 
 interface TaskProps {
   task: string;
@@ -14,7 +14,8 @@ interface TaskProps {
   setTask: (value: any) => void;
 }
 
-export function Task({ task, setDone, setTask }: TaskProps) {
+ const TaskComponent = ({ task, setDone, setTask }: TaskProps) => {
+  console.log('Rendering', task)
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDone((value: string[]) => {
       if (event.target.checked) {
@@ -61,3 +62,8 @@ export function Task({ task, setDone, setTask }: TaskProps) {
     </div>
   );
 }
+
+const Task = React.memo(TaskComponent)
+
+export { Task };
+
