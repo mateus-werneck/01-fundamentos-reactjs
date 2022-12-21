@@ -1,0 +1,43 @@
+.tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 736px;
+    height: 287px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0px;
+    gap: 500px;
+}
+
+.task-counters {
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--blue);
+    text-shadow: 1px 1px 2px black;
+}
+
+.circle {
+    width: 36px;
+    height:36px;
+    border-radius:18px;
+    background-color:'red'
+}
+
+.task-content {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto; 
+}
